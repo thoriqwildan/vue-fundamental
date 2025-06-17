@@ -3,8 +3,10 @@ import { ref } from "vue";
 
 // let count = 0;
 
+const props = defineProps(["name", "initialCount"]);
+
 const counter = ref({
-  count: 0,
+  count: Number(props.initialCount) || 0,
   name: "Thoriq",
 });
 
@@ -18,7 +20,7 @@ function increment() {
 
 <template>
   <div>
-    <h1 id="count">{{ counter.name }}'s counter: {{ counter.count }}</h1>
+    <h1 id="count">{{ props.name }}'s counter: {{ counter.count }}</h1>
     <button v-on:click="increment">Increment</button>
   </div>
 </template>

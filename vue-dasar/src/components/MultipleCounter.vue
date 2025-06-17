@@ -1,13 +1,13 @@
 <script setup>
 import Counter from "./Counter.vue";
+
+const names = ["Thoriq", "Tirta"];
 </script>
 
 <template>
-  <h1>Counter Thoriq</h1>
-  <Counter />
+  <Counter name="Thoriq" initial-count="10" />
 
-  <h1>Counter Tirta</h1>
-  <Counter />
+  <Counter name="Tirta" />
 </template>
 
 <style scoped></style>
