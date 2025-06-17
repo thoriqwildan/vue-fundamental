@@ -1,0 +1,6 @@
+vue-dasar/.env
+vue-dasar/node_modules
+vue-dasar/dist
+
+vue-dasar/.vscode/*
+
