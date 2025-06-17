@@ -1,5 +1,12 @@
 <script setup>
-import { reactive, ref, useTemplateRef } from "vue";
+import {
+  onBeforeMount,
+  onMounted,
+  onUpdated,
+  reactive,
+  ref,
+  useTemplateRef,
+} from "vue";
 
 const notes = reactive([]);
 const note = ref("");
@@ -16,6 +23,16 @@ function addNote() {
     });
   }
 }
+
+onMounted(() => {
+  console.log("onMounted");
+});
+onBeforeMount(() => {
+  console.log("onBeforeMount");
+});
+onUpdated(() => {
+  console.log("onUpdated");
+});
 </script>
 
 <template>
