@@ -1,9 +1,20 @@
 <script setup>
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 
 const person = reactive({
   firstName: "Thoriq",
   lastName: "Wildan",
+});
+
+// Normal function
+// function fullName() {
+//   return `${person.firstName} ${person.lastName}`;
+// }
+
+// Computed function
+const fullName = computed((oldName) => {
+  console.log(`Old name: ${oldName}`);
+  return `${person.firstName} ${person.lastName}`;
 });
 
 function sayHello() {
@@ -19,7 +30,7 @@ function sayHello() {
     <button v-on:click="sayHello">Say Hello</button>
   </div>
 
-  <h1>Hello {{ person.firstName }} {{ person.lastName }}</h1>
+  <h1>Hello {{ fullName }}</h1>
 </template>
 
 <style scoped></style>
